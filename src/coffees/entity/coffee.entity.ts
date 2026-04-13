@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Flavour } from './flavours.entity';
 
 @Entity()
 export class Coffee {
@@ -6,10 +13,11 @@ export class Coffee {
   id: number;
   @Column()
   name: string;
-  
+
   @Column()
   brand: string;
 
-  @Column('json', { nullable: true })
+  @JoinTable()
+  @ManyToMany((type) => Flavour, (flavour) => flavour.coffees)
   flavors: string[];
 }
