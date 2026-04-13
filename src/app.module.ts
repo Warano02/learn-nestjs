@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 
-@Module({
+@Module({ 
   imports: [CoffeesModule],
   controllers: [AppController],
   providers: [AppService],
