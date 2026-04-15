@@ -1,1 +1,1 @@
-npm i class-validator class-transformer
+lecon 30
