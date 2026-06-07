@@ -10,7 +10,10 @@ import { COFFEE_BRANDS } from './coffees.constants';
 @Module({
   imports: [TypeOrmModule.forFeature([Coffee, Flavour, Event])],
   controllers: [CoffeesController],
-  providers: [CoffeesService,{ provide: COFFEE_BRANDS, useValue: ["buddy brew,","nestcafe"] }],
+  providers: [
+    CoffeesService,
+    { provide: COFFEE_BRANDS, useFactory: () => ['buddy brew,', 'nestcafe'] },
+  ],
   exports: [CoffeesService],
 })
 export class CoffeesModule {}
