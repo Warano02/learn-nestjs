@@ -18,7 +18,9 @@ export class CoffeesService {
     private readonly flavourRepository: Repository<Flavour>,
     private readonly connection: Connection,
     @Inject(COFFEE_BRANDS) coffeeBrands,
-  ) {}
+  ) {
+    console.log("New incoming request to coffees routes")
+  }
 
   findAll(paginationQuery: PaginationQueryDto) {
     const { limit, offset } = paginationQuery;
