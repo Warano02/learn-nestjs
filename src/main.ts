@@ -16,7 +16,6 @@ async function bootstrap() {
       },
     }),
   );
-  app.useGlobalGuards(new ApiKeyGuard())
   app.useGlobalFilters(new HttpExceptionFilter())
   await app.listen(process.env.PORT ?? 3000);
 }
