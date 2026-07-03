@@ -21,7 +21,7 @@ export class CoffeesService {
     @Inject(COFFEE_BRANDS) coffeeBrands,
     private readonly configService: ConfigService,
   ) {
-    const databaseHost = this.configService.get<string>('DATABASE_HOST');
+    const databaseHost = this.configService.get<string>("coffeess");
     console.log('Database host ', databaseHost);
   }
 
